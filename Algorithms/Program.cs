@@ -1,10 +1,8 @@
-﻿using System;
-
-namespace Algorithms
+﻿namespace Algorithms
 {
-    class Program
+    internal class Program
     {
-        static void Main(string[] args)
+        private static void Main(string[] args)
         {
         }
     }

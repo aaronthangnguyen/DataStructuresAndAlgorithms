@@ -1,16 +1,14 @@
-﻿using System;
-
-namespace DataStructures
+﻿namespace DataStructures
 {
     public class Node
     {
+        public int Data;
+        public Node Next;
+
         public Node(int data)
         {
             Data = data;
         }
-
-        public int Data;
-        public Node Next;
     }
 
     public class LinkedList
@@ -48,10 +46,7 @@ namespace DataStructures
             {
                 var node = Head;
 
-                while (node.Next != null)
-                {
-                    node = node.Next;
-                }
+                while (node.Next != null) node = node.Next;
 
                 var newNode = new Node(data);
                 newNode.Next = null;
@@ -63,10 +58,7 @@ namespace DataStructures
         {
             var node = Head;
 
-            for (var i = 0; i < index; i++)
-            {
-                node = node.Next;
-            }
+            for (var i = 0; i < index; i++) node = node.Next;
 
             return node;
         }

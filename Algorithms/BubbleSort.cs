@@ -15,10 +15,7 @@ namespace Algorithms
             // Use while loop until isSorted = true
             while (isSorted == false)
             {
-                if (unsortedIndex == 0)
-                {
-                    isSorted = true;
-                }
+                if (unsortedIndex == 0) isSorted = true;
                 if (index == unsortedIndex)
                 {
                     index = 0;
@@ -26,10 +23,8 @@ namespace Algorithms
                 }
 
                 if (array[index] > array[index + 1])
-                {
                     (array[index], array[index + 1]) = (array[index + 1], array[index]); // Swap
-                }
-                
+
                 index = index + 1;
             }
 

@@ -1,7 +1,7 @@
 using Xunit;
 using Xunit.Abstractions;
 
-namespace DataStructures.Test
+namespace DataStructures.Tests
 {
     public class LinkedListTest
     {
@@ -41,7 +41,7 @@ namespace DataStructures.Test
                 node = node.Next;
             }
         }
-        
+
         [Fact]
         public void AppendShouldAddAtTheEnd()
         {
@@ -66,16 +66,14 @@ namespace DataStructures.Test
             linkedList.Prepend(3);
             linkedList.Prepend(5);
             linkedList.Prepend(7);
-            
+
             var actual = linkedList.RetrieveByIndex(2);
 
             var expected = linkedList.Head.Next.Next;
-            
+
             Assert.Equal(expected.Data, actual.Data);
-
-
         }
-        
+
         [Fact]
         public void DeleteShouldWork()
         {
@@ -84,19 +82,18 @@ namespace DataStructures.Test
             linkedList.Prepend(3);
             linkedList.Prepend(5);
             linkedList.Prepend(7);
-            
+
             // 7-5-3-1 -> 7-3-1
             // linkedList.Head.Next.Next = linkedList.Head.Next.Next.Next;
 
-            linkedList.DeleteByIndex(linkedList,0);
-            
+            linkedList.DeleteByIndex(linkedList, 0);
+
             var runNode = linkedList.Head;
             while (runNode != null) // node.Next != null doesn't get the last node
             {
                 _testOutputHelper.WriteLine($"{runNode.Data}");
                 runNode = runNode.Next;
             }
-            
         }
     }
 }
